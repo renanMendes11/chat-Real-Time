@@ -21,7 +21,7 @@
     
 </body>
     <script type="text/javascript">
-        var socket = io(`http://https://chat-real-time-sockeio.herokuapp.com:${process.env.PORT}`);
+        var socket = io(`http://https://chat-real-time-sockeio.herokuapp.com`);
 
         function renderMessage(message){
             $('.messages').append('<div class="message"><strong>' + message.author + '</strong>:'+ message.message + '</div>');
