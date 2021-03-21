@@ -21,10 +21,10 @@
     
 </body>
     <script type="text/javascript">
-        var socket = io(`https://chat-real-time-sockeio.herokuapp.com`);
+        var socket = io(`http://localhost:3000/`);
 
         function renderMessage(message){
-            $('.messages').append('<div class="message"><strong>' + message.author + '</strong>:'+ message.message + '</div>');
+            $('.messages').append('<div class="message"><strong>' + message.author + '</strong> : '+ message.message + '</div>');
         }
 
         socket.on('receivedMessage', function(message){
@@ -42,6 +42,7 @@
 
             var author = $('input[name=username]').val();
             var message = $('input[name=message]').val();
+            $('input[name=message]').val('');
             
         if (author.length && message.length) {
             var messageObject = {
